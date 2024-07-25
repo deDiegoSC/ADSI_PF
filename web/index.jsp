@@ -27,27 +27,55 @@
             <form class="bg-white px-8 pt-6 pb-8 mb-4 font-medium rounded-lg shadow-lg" style="font-size: 130%">
                 <div class="mb-4">
                     <label class="block text-1xl font-bold mb-2">Usuario:</label>
-                    <input class="rounded-md border-2 border-black my-3 px-4 py-2 w-full" type="text" id="usuario"
-                           name="usuario" required>
+                    <input class="rounded-md border-2 border-black my-3 px-4 py-2 w-full" type="text" id="usuario" name="usuario" required>
                 </div>
                 <div class="mb-6">
                     <label class="block text-1xl font-bold mb-2">Contraseña:</label>
-                    <input class="rounded-md border-2 border-black my-3 px-4 py-2 w-full" type="password"
-                           id="password" name="password" required>
+                    <input class="rounded-md border-2 border-black my-3 px-4 py-2 w-full" type="password" id="password" name="password" required>
                 </div>
                 <div class="mb-6">
                     <label class="block text-1xl font-bold mb-2">Rol:</label>
-                    <select class="border-black border-2 rounded-md my-3 px-4 py-2 w-full">
-                        <option>Supervisor</option>
-                        <option>Almacenero</option>
-                        <option>Administrador</option>
+                    <select id="roleSelect" class="border-black border-2 rounded-md my-3 px-4 py-2 w-full">
+                        <option value="/ADSI_PF/Supervisor/SoliDevo.jsp">Supervisor</option>
+                        <option value="/ADSI_PF/Almacen/ControlAlmacen.jsp">Almacenero</option>
+                        <option value="/ADSI_PF/Administrador/RegistroUsuario.jsp">Administrador</option>
                     </select>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="bg-blue-400 rounded-md text-white py-2 cursor-pointer w-full hover:bg-blue-800"
-                            name="btnIngresar">Ingresar</button>
+                    <button id="navigateButton" type="button" class="bg-blue-400 rounded-md text-white py-2 cursor-pointer w-full hover:bg-blue-800">Ingresar</button>
                 </div>
             </form>
+
+            <script>
+                document.getElementById('navigateButton').addEventListener('click', function () {
+                    var selectedValue = document.getElementById('roleSelect').value;
+                    if (selectedValue) {
+                        window.location.href = selectedValue;
+                    } else {
+                        alert('Por favor complete todo lo requerido.');
+                    }
+                });
+            </script>
         </div>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

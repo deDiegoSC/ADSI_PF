@@ -1,6 +1,6 @@
 <%-- 
-    Document   : RegistroUsuario
-    Created on : 4 jul. 2024, 20:12:11
+    Document   : ControlDev
+    Created on : 24 jul. 2024, 20:02:16
     Author     : DIEGO
 --%>
 
@@ -11,7 +11,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Supervisor</title>
+        <title>ControlDevoluciones</title>
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -27,11 +27,16 @@
             h3 {
                 text-align: center;
             }
+
+            #VentEmer:target {
+                display: flex;
+            }
         </style>
 
     </head>
 
     <body>
+        <!--NAV-->
         <div class="text-white flex flex-col justify-between fixed top-0 left-0 h-screen w-3/12	p-4"
              style="background-color: #929392;">
             <div class="p-4">
@@ -41,72 +46,71 @@
                 <nav>
                     <ul>
                         <li class="mb-5">
-                            <a href="RegistroUsuario.jsp" class="flex items-center p-2 bg-gray-600 rounded-md">
-                                <i class="fa-solid fa-users-gear fa-xl mr-5" style="color: #ffffff;"></i>
-                                <span>Control Usuarios</span>
+                            <a href="GenerarSoli.jsp" class="flex items-center p-2 rounded-md">
+                                <i class="fa-solid fa-hand-point-up fa-xl mr-5" style="color: #ffffff;"></i>
+                                <span>Generar Solicitud</span>
                             </a>
                         </li>
                         <li class="mb-5">
-                            <a href="ControlProveedor.jsp" class="flex items-center p-2 rounded-md">
-                                <i class="fa-solid fa-user-tie fa-xl mr-5" style="color: #ffffff;"></i>
+                            <a href="SoliDevo.jsp" class="flex items-center p-2 rounded-md">
+                                <i class="fa-solid fa-hand-point-up fa-xl mr-5" style="color: #ffffff;"></i>
+                                <span>Generar Devolucion</span>
+                            </a>
+                        </li>
+                        <li class="mb-5">
+                            <a href="ControlProv.jsp" class="flex items-center p-2 rounded-md">
+                                <i class="fa-solid fa-person-circle-plus fa-xl mr-5" style="color: #ffffff;"></i>
                                 <span>Control Proveedor</span>
                             </a>
                         </li>
-
+                        <li class="mb-5">
+                            <a href="ControlDev.jsp" class="flex items-center p-2 rounded-md bg-gray-600">
+                                <i class="fa-solid fa-person-circle-plus fa-xl mr-5" style="color: #ffffff;"></i>
+                                <span>Control Devoluciones</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
             <div class="p-4 text-right mb-4">
-                <h2 class="mb-4 text-sm font-bold">ADMINISTRACION</h2>
-                <p class="text-xs">Diego Elbert Soncco Calla</p>
+                <h2 class="mb-4 text-sm font-bold">SUPERVISOR</h2>
+                <p class="text-xs">JOEL</p>
                 <div class="flex justify-start">
                     <a href="../index.jsp"><input type="submit"
-                           class="bg-red-600 rounded-md text-white py-2 px-4 cursor-pointer hover:bg-red-900" 
-                           name="accion"
-                           value="Salir"></a>
+                                               class="bg-red-600 rounded-md text-white py-2 px-4 cursor-pointer hover:bg-red-900" 
+                                               name="accion"
+                                               value="Salir"></a>
                 </div>
             </div>
         </div>
-        <!-- component -->
-
+        <!--FINNAV-->
+        <!--CUERPO-->
         <div class="w-9/12 h-screen overflow-y-auto p-8" style="margin-left: 25%;">
-
+            <h1 class="text-3xl font-bold mb-8 text-[#1E415A] text-center">CONTROL DEVOLUCIONES</h1>
             <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                 <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
-                    <table class="min-w-full leading-normal">
+                    <table class="min-w-full leading-normal ">
                         <thead>
                             <tr>
                                 <th
                                     class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    ID
+                                    Nro de Devolucion
                                 </th>
                                 <th
                                     class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Nombre
+                                    Fecha
                                 </th>
                                 <th
                                     class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Apellido
+                                    Area
                                 </th>
                                 <th
                                     class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Email
+                                    Estado
                                 </th>
                                 <th
                                     class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Status
-                                </th>
-                                <th
-                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Telefono
-                                </th>
-                                <th
-                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Rol
-                                </th>
-                                <th
-                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Acciones
+                                    Comentario
                                 </th>
                             </tr>
                         </thead>
@@ -123,45 +127,32 @@
                                     </div>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">Diego</p>
+                                    <p class="text-gray-900 whitespace-no-wrap">20/07/2024</p>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     <p class="text-gray-900 whitespace-no-wrap">
-                                        Soncco
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">
-                                        diego@gmail.com
+                                        Almacen
                                     </p>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     <span
                                         class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                                         <span aria-hidden
-                                              class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                                        <span class="relative">Activo</span>
+                                              class="absolute inset-0 bg-blue-300 opacity-50 rounded-full"></span>
+                                        <span class="relative">Aprobado</span>
                                     </span>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     <p class="text-gray-900 whitespace-no-wrap">
-                                        970604059
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">
-                                        Supervisor
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">
-                                        Editar - Eliminar
+                                        Gracias por avisar!
                                     </p>
                                 </td>
                             </tr>
+
                             <tr>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     <div class="flex items-center">
+
                                         <div class="ml-3">
                                             <p class="text-gray-900 whitespace-no-wrap">
                                                 02
@@ -170,44 +161,31 @@
                                     </div>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">Anthony</p>
+                                    <p class="text-gray-900 whitespace-no-wrap">21/07/2024</p>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     <p class="text-gray-900 whitespace-no-wrap">
-                                        Huayhualla
-                                    </p>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">
-                                        anthony@gmail.com
+                                        Almacen
                                     </p>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     <span
                                         class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                                         <span aria-hidden
-                                              class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                                        <span class="relative">Activo</span>
+                                              class="absolute inset-0 bg-red-300 opacity-50 rounded-full"></span>
+                                        <span class="relative">Desaprobado</span>
                                     </span>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     <p class="text-gray-900 whitespace-no-wrap">
-                                        123456789
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">
-                                        Administrador
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">
-                                        Editar - Eliminar
+                                        No se recibieron los materiales correspondientes.
                                     </p>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     <div class="flex items-center">
+
                                         <div class="ml-3">
                                             <p class="text-gray-900 whitespace-no-wrap">
                                                 03
@@ -216,88 +194,33 @@
                                     </div>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">Alvaro</p>
+                                    <p class="text-gray-900 whitespace-no-wrap">23/07/2024</p>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     <p class="text-gray-900 whitespace-no-wrap">
-                                        Serrano Reyes
-                                    </p>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">
-                                        alvaro@gmail.com
+                                        Almacen
                                     </p>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     <span
-                                        class="relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight">
+                                        class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                                         <span aria-hidden
-                                              class="absolute inset-0 bg-orange-200 opacity-50 rounded-full"></span>
-                                        <span class="relative">Suspendido</span>
+                                              class="absolute inset-0 bg-purple-300 opacity-50 rounded-full"></span>
+                                        <span class="relative">Pendiente</span>
                                     </span>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     <p class="text-gray-900 whitespace-no-wrap">
-                                        987654321
+                                        ...
                                     </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">
-                                        Almacenero
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">
-                                        Editar- Eliminar
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="px-5 py-5 bg-white text-sm">
-                                    <div class="flex items-center">
-                                        <div class="ml-3">
-                                            <p class="text-gray-900 whitespace-no-wrap">
-                                                04
-                                            </p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-5 py-5 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">Joel</p>
-                                </td>
-                                <td class="px-5 py-5 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">Rodriguez</p>
-                                </td>
-                                <td class="px-5 py-5 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">joel@gmail.com</p>
-                                </td>
-                                <td class="px-5 py-5 bg-white text-sm">
-                                    <span class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
-                                        <span aria-hidden
-                                              class="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
-                                        <span class="relative">Inactivo</span>
-                                    </span>
-                                </td>
-                                <td class="px-5 py-5 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">214365879</p>
-                                </td>
-                                <td class="px-5 py-5 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">Supervisor</p>
-                                </td>
-                                <td class="px-5 py-5 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">Editar - Eliminar</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="mt-4">
-                <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded">REGISTRAR</button>
-            </div>
         </div>
 
         <!--FINTABLA-->
-
     </body>
-
 </html>
