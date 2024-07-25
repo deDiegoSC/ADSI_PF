@@ -45,13 +45,13 @@
                 <nav>
                     <ul>
                         <li class="mb-5">
-                            <a href="SoliPed.jsp" class="flex items-center p-2 rounded-md">
+                            <a href="SoliPed.jsp" class="flex items-center p-2 rounded-md bg-gray-600">
                                 <i class="fa-solid fa-hand-point-up fa-xl mr-5" style="color: #ffffff;"></i>
                                 <span>Generar Solicitud</span>
                             </a>
                         </li>
                         <li class="mb-5">
-                            <a href="SoliDevo.jsp" class="flex items-center p-2 rounded-md bg-gray-600">
+                            <a href="SoliDevo.jsp" class="flex items-center p-2 rounded-md ">
                                 <i class="fa-solid fa-hand-point-up fa-xl mr-5" style="color: #ffffff;"></i>
                                 <span>Generar Devolucion</span>
                             </a>
